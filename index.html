@@ -5,19 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Treep&co</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOnziQGz8U7vHmNGNHCeqOsIF3WEtUwQM&callback=initMap"
+    type="text/javascript"></script> -->
 </head>
 <body>
-    <div class="card">
+    <div class="mobile">
     <div class="mapheader">
-        <img src="/media/example/leopard.jpeg" alt="Bouton recherches">
+        <img class=btrecherche src="/img/recherche.png" alt="Bouton recherches">
         <p>Map</p>
-        <img src="/media/example/leopard.jpg" alt="Bouton télécharger">
+        <img class=bttelechargement src="/img/telechargement.png" alt="Bouton télécharger">
     </div>
-
-    <div>
-        <img src="/media/examples/leopard.jpg" alt="Carte">
-    </div>
-</div>
     
+    
+
+
+    <nav class ="tab-bar">
+        <ul> 
+            <li>
+                <a href="home">
+                    <span class="iconify-home iconify" data-inline="false" data-icon="fluent:home-32-filled"></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="location">
+                    <span class="iconify-location iconify" data-inline="false" data-icon="bx:bx-location-plus"></span>
+                </a>
+             <li>
+                 <a href="map">
+                     <span class="iconify-map iconify" data-inline="false" data-icon="cil:map"></span>
+                 </a>
+
+                 <li>
+                     <a href="message">
+                         <span class="iconify-message iconify" data-inline="false" data-icon="ant-design:message-filled"></span>
+                
+                     </a>   
+
+        </ul> 
+
+    </nav>
+
+</div>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
+
+<div id='map' class="map"></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZG9jbW91c3NlIiwiYSI6ImNrb2lhaDd1OTAyaXMzMXB2b3IxbzB3czYifQ.FiUvpvRXyWSOmG1Yc0Zh6Q';
+var map = new mapboxgl.Map({
+container: 'map', // container ID
+style: '/style.json', // style URL
+center: [-74.5, 40], // starting position [lng, lat]
+zoom: 9 // starting zoom
+});
+</script>
+<!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOnziQGz8U7vHmNGNHCeqOsIF3WEtUwQM&callback=initMap&libraries=&v=weekly"
+      async
+    ></script> -->
+
 </body>
 </html>
