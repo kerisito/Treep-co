@@ -120,6 +120,7 @@ geojson.features.forEach(function(marker) {
 // create a HTML element for each feature
 var el = document.createElement('div');
 el.className = 'marker';
+el.id = 'marker';
 
 // make a marker for each feature and add to the map
 new mapboxgl.Marker(el)
@@ -143,8 +144,28 @@ new mapboxgl.Marker(el)
 
     </script>
 
+<div id="overlay" class="overlay">
+    <div id="popup" class="popup">
+    <h2>
+    Exemple simple de popup 
+    <span id="btnClose" class="btnClose">&times;</span>
+    </h2>
+    <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a nulla 
+    a massa interdum imperdiet sed nec nibh. Proin porttitor euismod nulla ut 
+    interdum. Cras elementum placerat aliquam.
+    </div>
+    </div>
+    </div>
 
-
+<script>
+    var btnPopup = document.getElementById('marker');
+    var overlay = document.getElementById('overlay');
+    btnPopup.addEventListener('click',openMoadl);
+    function openMoadl() {
+    overlay.style.display='block';
+    }
+</script>
 
 
 </body>
