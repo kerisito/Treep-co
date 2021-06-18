@@ -31,11 +31,11 @@
 
             <li>
                 <a href="location">
-                    <span class="iconify-location iconify" data-inline="false" data-icon="bx:bx-location-plus"></span>
+                    <span class="iconify-location iconify" data-inline="false" data-icon="bx:bxs-location-plus"></span>
                 </a>
              <li>
                  <a href="map" class="active">
-                     <span class="iconify-map iconify" data-inline="false" data-icon="cil:map"></span>
+                     <span class="iconify-map iconify" data-inline="false" data-icon="bi:map-fill"></span>
                  </a>
 
                  <li>
@@ -50,7 +50,7 @@
 
 </div>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css' rel='stylesheet' />
+<link href='mapbox-gl.css' rel='stylesheet' />
 
 <div id='map' class="map"></div>
 <script>
@@ -120,7 +120,6 @@ geojson.features.forEach(function(marker) {
 // create a HTML element for each feature
 var el = document.createElement('div');
 el.className = 'marker';
-el.id = 'marker';
 
 // make a marker for each feature and add to the map
 new mapboxgl.Marker(el)
@@ -140,32 +139,13 @@ new mapboxgl.Marker(el)
 
             });
         })
-
+    
+        var popup = new mapboxgl.Popup({ closeOnClick: false })
+        .setLngLat([73.8582, 15.5163])
+        .setHTML(' <img class="photo" src=img/socorro.png> <div class=socorrotxt><h1>Socorro Plateau</h1><p>Partez découvrir les différentes espèces du plateau de Socorro…</p></div>')
+        .addTo(map);
 
     </script>
-
-<div id="overlay" class="overlay">
-    <div id="popup" class="popup">
-    <h2>
-    Exemple simple de popup 
-    <span id="btnClose" class="btnClose">&times;</span>
-    </h2>
-    <div>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a nulla 
-    a massa interdum imperdiet sed nec nibh. Proin porttitor euismod nulla ut 
-    interdum. Cras elementum placerat aliquam.
-    </div>
-    </div>
-    </div>
-
-<script>
-    var btnPopup = document.getElementById('marker');
-    var overlay = document.getElementById('overlay');
-    btnPopup.addEventListener('click',openMoadl);
-    function openMoadl() {
-    overlay.style.display='block';
-    }
-</script>
 
 
 </body>
